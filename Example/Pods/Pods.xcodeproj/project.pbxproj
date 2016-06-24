@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A1D9F4C1D1CD014007E5A37 /* NSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D9F4B1D1CD014007E5A37 /* NSDateExtensions.swift */; };
 		5E1C8456C7A75C5773FA33B797D8EE39 /* Pods-NSDateExtensions_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 51C1BCA612734CB0B032B033FA6DB72F /* Pods-NSDateExtensions_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6769F29FCA553E96C166DDD978B56617 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D6465C6BCE7889E8555C4FD8D2020F /* ReplaceMe.swift */; };
 		7B3DBB22E3FCCDEF38A11ED3374521AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
 		9CD18D9C2B813EDFA481046150032A9A /* NSDateExtensions-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0A454DCCB0CA97B6608BE8C4D222E3 /* NSDateExtensions-dummy.m */; };
 		A5A6EFD66BADCE266AA66838DC2A54DF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
@@ -27,8 +27,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A1D9F4B1D1CD014007E5A37 /* NSDateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtensions.swift; sourceTree = "<group>"; };
 		0C5770853EB2D76D9F7BAF7AEB9C2183 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		12D6465C6BCE7889E8555C4FD8D2020F /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReplaceMe.swift; sourceTree = "<group>"; };
 		15E1EB94D5F392659A078DCF038FBC04 /* Pods-NSDateExtensions_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NSDateExtensions_Tests-resources.sh"; sourceTree = "<group>"; };
 		19FA00FCE2CEAD5B719938605A28B2BB /* Pods-NSDateExtensions_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NSDateExtensions_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		1FE1FA02743C1B9C72DE96DF2D1D2C82 /* NSDateExtensions.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NSDateExtensions.xcconfig; sourceTree = "<group>"; };
@@ -140,7 +140,7 @@
 		9686829B8DDAEDB918F72FB58F3FC0A1 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				12D6465C6BCE7889E8555C4FD8D2020F /* ReplaceMe.swift */,
+				0A1D9F4B1D1CD014007E5A37 /* NSDateExtensions.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -270,7 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CD18D9C2B813EDFA481046150032A9A /* NSDateExtensions-dummy.m in Sources */,
-				6769F29FCA553E96C166DDD978B56617 /* ReplaceMe.swift in Sources */,
+				0A1D9F4C1D1CD014007E5A37 /* NSDateExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +336,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1FE1FA02743C1B9C72DE96DF2D1D2C82 /* NSDateExtensions.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -399,6 +400,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1FE1FA02743C1B9C72DE96DF2D1D2C82 /* NSDateExtensions.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
