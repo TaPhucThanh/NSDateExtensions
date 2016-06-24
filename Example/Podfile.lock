@@ -1,0 +1,16 @@
+PODS:
+  - NSDateExtensions (0.1.0)
+
+DEPENDENCIES:
+  - NSDateExtensions (from `../`)
+
+EXTERNAL SOURCES:
+  NSDateExtensions:
+    :path: ../
+
+SPEC CHECKSUMS:
+  NSDateExtensions: b5e92e7fdcc507ec847a4c55ed34ebe1cf2d286e
+
+PODFILE CHECKSUM: f9036a1222624aad6132f4801d748008c05de446
+
+COCOAPODS: 1.0.1
