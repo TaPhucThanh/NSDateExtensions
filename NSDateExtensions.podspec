@@ -21,11 +21,11 @@ Pod::Spec.new do |s|
 NSDateExtensions is a utilities extension built on Apple''s NSDate.
                        DESC
 
-  s.homepage         = 'https://github.com/actuallymrj/NSDateExtensions'
+  s.homepage         = 'https://github.com/NSDateExtensions/NSDateExtensions'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Matt Johnson' => 'matt@intuitivedesignlabs.com' }
-  s.source           = { :git => 'https://github.com/actuallymrj/NSDateExtensions.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/NSDateExtensions/NSDateExtensions.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '9.0'
