@@ -1,6 +1,4 @@
 use_frameworks!
 target 'NSDateExtensions_Tests' do
   pod 'NSDateExtensions', :path => '../'
-  
-  
 end

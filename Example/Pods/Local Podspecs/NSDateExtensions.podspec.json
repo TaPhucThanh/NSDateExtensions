@@ -1,8 +1,8 @@
 {
   "name": "NSDateExtensions",
   "version": "0.1.0",
-  "summary": "A short description of NSDateExtensions.",
-  "description": "TODO: Add long description of the pod here.",
+  "summary": "NSDateExtensions is a utilities extension built on Apples NSDate.",
+  "description": "NSDateExtensions is a utilities extension built on Apple''s NSDate.",
   "homepage": "https://github.com/actuallymrj/NSDateExtensions",
   "license": {
     "type": "MIT",
@@ -16,7 +16,7 @@
     "tag": "0.1.0"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "9.0"
   },
   "source_files": "NSDateExtensions/Classes/**/*"
 }
