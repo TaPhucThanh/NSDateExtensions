@@ -1,6 +1,6 @@
 # NSDateExtensions
 
-[![CI Status](http://img.shields.io/travis/Matt Johnson/NSDateExtensions.svg?style=flat)](https://travis-ci.org/Matt Johnson/NSDateExtensions)
+[![CI Status](http://img.shields.io/travis/NSDateExtensions/NSDateExtensions.svg?style=flat)](https://travis-ci.org/NSDateExtensions/NSDateExtensions)
 [![Version](https://img.shields.io/cocoapods/v/NSDateExtensions.svg?style=flat)](http://cocoapods.org/pods/NSDateExtensions)
 [![License](https://img.shields.io/cocoapods/l/NSDateExtensions.svg?style=flat)](http://cocoapods.org/pods/NSDateExtensions)
 [![Platform](https://img.shields.io/cocoapods/p/NSDateExtensions.svg?style=flat)](http://cocoapods.org/pods/NSDateExtensions)
