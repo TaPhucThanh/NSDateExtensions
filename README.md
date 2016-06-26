@@ -24,6 +24,9 @@ pod "NSDateExtensions"
 
 Matt Johnson, matt@intuitivedesignlabs.com
 
+## About
+NSDateExtensions is a port of @erica's [NSDate-Extensions](https://github.com/erica/NSDate-Extensions) for Objective-C placed into a cocoapod for easy integration.
+
 ## License
 
 NSDateExtensions is available under the MIT license. See the LICENSE file for more info.
