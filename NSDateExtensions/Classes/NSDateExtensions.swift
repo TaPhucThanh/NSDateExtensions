@@ -30,6 +30,7 @@ public extension NSDate {
     }
     
     //MARK: - Relative Dates
+    //MARK: Days
     class func daysFromNow(days: Int) -> NSDate {
         return NSDate().addDays(days)
     }
@@ -46,6 +47,7 @@ public extension NSDate {
         return NSDate.daysBeforeNow(1)
     }
     
+    //MARK: Hours
     class func hoursFromNow(hours: Int) -> NSDate {
         let timeInterval = NSDate().timeIntervalSinceReferenceDate + Double(Constants.hour * hours)
         return NSDate(timeIntervalSinceReferenceDate: timeInterval)
@@ -56,6 +58,7 @@ public extension NSDate {
         return NSDate(timeIntervalSinceReferenceDate: timeInterval)
     }
     
+    //MARK: Minutes
     class func minutesFromNow(minutes: Int) -> NSDate {
         let timeInterval = NSDate().timeIntervalSinceReferenceDate + Double(Constants.minute * minutes)
         return NSDate(timeIntervalSinceReferenceDate: timeInterval)
@@ -67,6 +70,7 @@ public extension NSDate {
     }
     
     //MARK: - String Properties
+    //MARK: Format and Style
     func stringWithFormat(format: String) -> String {
         let formatter = NSDateFormatter()
         formatter.dateFormat = format
@@ -80,6 +84,7 @@ public extension NSDate {
         return formatter.stringFromDate(self)
     }
     
+    //MARK: Short Formats
     func shortString() -> String {
         return self.stringWithDateStyle(.ShortStyle, timeStyle: .ShortStyle)
     }
@@ -92,6 +97,7 @@ public extension NSDate {
         return self.stringWithDateStyle(.ShortStyle, timeStyle: .NoStyle)
     }
     
+    //MARK: Medium Formats
     func mediumString() -> String {
         return self.stringWithDateStyle(.MediumStyle, timeStyle: .MediumStyle)
     }
@@ -104,6 +110,7 @@ public extension NSDate {
         return self.stringWithDateStyle(.MediumStyle, timeStyle: .NoStyle)
     }
     
+    //MARK: Long Formats
     func longString() -> String {
         return self.stringWithDateStyle(.LongStyle, timeStyle: .LongStyle)
     }
@@ -117,12 +124,14 @@ public extension NSDate {
     }
     
     //MARK: - Comparing Dates
+    //MARK: Equal Dates
     func equalToDateIgnoringTime(date: NSDate) -> Bool {
         let components1 = NSDate.currentCalendar.components(componentFlags, fromDate:self)
         let components2 = NSDate.currentCalendar.components(componentFlags, fromDate:date)
         return ((components1.day == components2.day) && (components1.month == components2.month) && (components1.year == components2.year))
     }
     
+    //MARK: Days
     func today() -> Bool {
         return self.equalToDateIgnoringTime(NSDate())
     }
@@ -135,6 +144,7 @@ public extension NSDate {
         return self.equalToDateIgnoringTime(NSDate.yesterday())
     }
 
+    //MARK: Weeks
     func sameWeekAsDate(date:NSDate) -> Bool {
         let components1 = NSDate.currentCalendar.components(componentFlags, fromDate:self)
         let components2 = NSDate.currentCalendar.components(componentFlags, fromDate:date)
@@ -158,6 +168,7 @@ public extension NSDate {
         return self.sameWeekAsDate(date)
     }
     
+    //MARK: Months
     func sameMonthAsDate(date: NSDate) -> Bool {
         let components1 = NSDate.currentCalendar.components([.Year, .Month], fromDate:self)
         let components2 = NSDate.currentCalendar.components([.Year, .Month], fromDate:date)
@@ -176,6 +187,7 @@ public extension NSDate {
         return self.sameMonthAsDate(NSDate().addMonths(1))
     }
     
+    //MARK: Years
     func sameYearAsDate(date: NSDate) -> Bool {
         let components1 = NSDate.currentCalendar.components(.Year, fromDate:self)
         let components2 = NSDate.currentCalendar.components(.Year, fromDate:date)
@@ -198,6 +210,7 @@ public extension NSDate {
         return (components1.year == (components2.year - 1))
     }
     
+    //MARK: Relativity
     func earlierThanDate(date: NSDate) -> Bool {
         return (self.compare(date) == .OrderedAscending)
     }
@@ -225,6 +238,7 @@ public extension NSDate {
     }
     
     //MARK: - Adjusting Dates
+    //MARK: Years
     func addYears(years: Int) -> NSDate {
         let dateComponents = NSDateComponents()
         dateComponents.year = years
@@ -235,6 +249,7 @@ public extension NSDate {
         return addYears(-years)
     }
     
+    //MARK: Months
     func addMonths(months: Int) -> NSDate {
         let dateComponents = NSDateComponents()
         dateComponents.month = months
@@ -245,6 +260,7 @@ public extension NSDate {
         return addMonths(-months)
     }
     
+    //MARK: Days
     func addDays(days: Int) -> NSDate {
         let dateComponents = NSDateComponents()
         dateComponents.day = days
@@ -255,6 +271,7 @@ public extension NSDate {
         return addDays(-days)
     }
     
+    //MARK: Hours
     func addHours(hours: Int) -> NSDate {
         let timeInterval = self.timeIntervalSinceReferenceDate + Double(Constants.hour * hours)
         return NSDate(timeIntervalSinceReferenceDate: timeInterval)
@@ -264,6 +281,7 @@ public extension NSDate {
         return addHours(-hours)
     }
     
+    //MARK: Minutes
     func addMinutes(minutes: Int) -> NSDate {
         let timeInterval = self.timeIntervalSinceReferenceDate + Double(Constants.minute * minutes)
         return NSDate(timeIntervalSinceReferenceDate: timeInterval)
@@ -273,6 +291,7 @@ public extension NSDate {
         return addMinutes(-minutes)
     }
     
+    //MARK: Relative Components
     func componentsWithOffsetFromDate(date: NSDate) -> NSDateComponents {
         return NSDate.currentCalendar.components(componentFlags, fromDate: date, toDate: self, options: .WrapComponents)
     }
@@ -295,6 +314,7 @@ public extension NSDate {
     }
     
     //MARK: - Intervals
+    //MARK: Minutes
     func minutesAfterDate(date: NSDate) -> Int {
         let timeInterval = self.timeIntervalSinceDate(date)
         return Int(timeInterval / Double(Constants.minute))
@@ -305,6 +325,7 @@ public extension NSDate {
         return Int(timeInterval / Double(Constants.minute))
     }
     
+    //MARK: Hours
     func hoursAfterDate(date: NSDate) -> Int {
         let timeInterval = self.timeIntervalSinceDate(date)
         return Int(timeInterval / Double(Constants.hour))
@@ -315,6 +336,7 @@ public extension NSDate {
         return Int(timeInterval / Double(Constants.hour))
     }
     
+    //MARK: Days
     func daysAfterDate(date: NSDate) -> Int {
         let timeInterval = self.timeIntervalSinceDate(date)
         return Int(timeInterval / Double(Constants.day))
@@ -331,7 +353,7 @@ public extension NSDate {
 //        return components.day
 //    }
     
-    //MARK: - Decomposing Dates
+    //MARK: - Component Properties
     var nearestHour: Int {
         get {
             let timeInterval:NSTimeInterval = NSDate().timeIntervalSinceReferenceDate + Double(Constants.minute * 30)
