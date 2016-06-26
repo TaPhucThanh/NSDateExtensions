@@ -20,7 +20,7 @@ public extension NSDate {
         }
     }
     
-    struct Constants {
+    internal struct Seconds {
         static let minute = 60
         static let hour = minute * 60
         static let day = hour * 24
@@ -39,6 +39,10 @@ public extension NSDate {
         return NSDate().subtractDays(days)
     }
     
+    class func today() -> NSDate {
+        return NSDate()
+    }
+    
     class func tomorrow() -> NSDate {
         return NSDate.daysFromNow(1)
     }
@@ -49,23 +53,23 @@ public extension NSDate {
     
     //MARK: Hours
     class func hoursFromNow(hours: Int) -> NSDate {
-        let timeInterval = NSDate().timeIntervalSinceReferenceDate + Double(Constants.hour * hours)
+        let timeInterval = NSDate().timeIntervalSinceReferenceDate + Double(Seconds.hour * hours)
         return NSDate(timeIntervalSinceReferenceDate: timeInterval)
     }
     
     class func hoursBeforeNow(hours: Int) -> NSDate {
-        let timeInterval = NSDate().timeIntervalSinceReferenceDate - Double(Constants.hour * hours)
+        let timeInterval = NSDate().timeIntervalSinceReferenceDate - Double(Seconds.hour * hours)
         return NSDate(timeIntervalSinceReferenceDate: timeInterval)
     }
     
     //MARK: Minutes
     class func minutesFromNow(minutes: Int) -> NSDate {
-        let timeInterval = NSDate().timeIntervalSinceReferenceDate + Double(Constants.minute * minutes)
+        let timeInterval = NSDate().timeIntervalSinceReferenceDate + Double(Seconds.minute * minutes)
         return NSDate(timeIntervalSinceReferenceDate: timeInterval)
     }
     
     class func minutesBeforeNow(minutes: Int) -> NSDate {
-        let timeInterval = NSDate().timeIntervalSinceReferenceDate - Double(Constants.minute * minutes)
+        let timeInterval = NSDate().timeIntervalSinceReferenceDate - Double(Seconds.minute * minutes)
         return NSDate(timeIntervalSinceReferenceDate: timeInterval)
     }
     
@@ -149,7 +153,7 @@ public extension NSDate {
         let components1 = NSDate.currentCalendar.components(componentFlags, fromDate:self)
         let components2 = NSDate.currentCalendar.components(componentFlags, fromDate:date)
         if components1.weekOfYear != components2.weekOfYear { return false }
-        return (fabs(self.timeIntervalSinceDate(date)) < Double(Constants.week))
+        return (fabs(self.timeIntervalSinceDate(date)) < Double(Seconds.week))
     }
     
     func thisWeek() -> Bool {
@@ -157,13 +161,13 @@ public extension NSDate {
     }
     
     func nextWeek() -> Bool {
-        let timeInterval = NSDate().timeIntervalSinceReferenceDate + Double(Constants.week)
+        let timeInterval = NSDate().timeIntervalSinceReferenceDate + Double(Seconds.week)
         let date = NSDate(timeIntervalSinceReferenceDate: timeInterval)
         return self.sameWeekAsDate(date)
     }
     
     func lastWeek() -> Bool {
-        let timeInterval = NSDate().timeIntervalSinceReferenceDate - Double(Constants.week)
+        let timeInterval = NSDate().timeIntervalSinceReferenceDate - Double(Seconds.week)
         let date = NSDate(timeIntervalSinceReferenceDate: timeInterval)
         return self.sameWeekAsDate(date)
     }
@@ -273,7 +277,7 @@ public extension NSDate {
     
     //MARK: Hours
     func addHours(hours: Int) -> NSDate {
-        let timeInterval = self.timeIntervalSinceReferenceDate + Double(Constants.hour * hours)
+        let timeInterval = self.timeIntervalSinceReferenceDate + Double(Seconds.hour * hours)
         return NSDate(timeIntervalSinceReferenceDate: timeInterval)
     }
     
@@ -283,7 +287,7 @@ public extension NSDate {
     
     //MARK: Minutes
     func addMinutes(minutes: Int) -> NSDate {
-        let timeInterval = self.timeIntervalSinceReferenceDate + Double(Constants.minute * minutes)
+        let timeInterval = self.timeIntervalSinceReferenceDate + Double(Seconds.minute * minutes)
         return NSDate(timeIntervalSinceReferenceDate: timeInterval)
     }
     
@@ -317,34 +321,34 @@ public extension NSDate {
     //MARK: Minutes
     func minutesAfterDate(date: NSDate) -> Int {
         let timeInterval = self.timeIntervalSinceDate(date)
-        return Int(timeInterval / Double(Constants.minute))
+        return Int(timeInterval / Double(Seconds.minute))
     }
     
     func minutesBeforeDate(date: NSDate) -> Int {
         let timeInterval = date.timeIntervalSinceDate(self)
-        return Int(timeInterval / Double(Constants.minute))
+        return Int(timeInterval / Double(Seconds.minute))
     }
     
     //MARK: Hours
     func hoursAfterDate(date: NSDate) -> Int {
         let timeInterval = self.timeIntervalSinceDate(date)
-        return Int(timeInterval / Double(Constants.hour))
+        return Int(timeInterval / Double(Seconds.hour))
     }
     
     func hoursBeforeDate(date: NSDate) -> Int {
         let timeInterval = date.timeIntervalSinceDate(self)
-        return Int(timeInterval / Double(Constants.hour))
+        return Int(timeInterval / Double(Seconds.hour))
     }
     
     //MARK: Days
     func daysAfterDate(date: NSDate) -> Int {
         let timeInterval = self.timeIntervalSinceDate(date)
-        return Int(timeInterval / Double(Constants.day))
+        return Int(timeInterval / Double(Seconds.day))
     }
     
     func daysBeforeDay(date: NSDate) -> Int {
         let timeInterval = date.timeIntervalSinceDate(self)
-        return Int(timeInterval / Double(Constants.day))
+        return Int(timeInterval / Double(Seconds.day))
     }
     
 //    func distanceInDaysToDate(date: NSDate) -> Int {
@@ -356,7 +360,7 @@ public extension NSDate {
     //MARK: - Component Properties
     var nearestHour: Int {
         get {
-            let timeInterval:NSTimeInterval = NSDate().timeIntervalSinceReferenceDate + Double(Constants.minute * 30)
+            let timeInterval:NSTimeInterval = NSDate().timeIntervalSinceReferenceDate + Double(Seconds.minute * 30)
             let date = NSDate(timeIntervalSinceReferenceDate: timeInterval)
             let components = NSDate.currentCalendar.components(componentFlags, fromDate: date)
             return components.hour
