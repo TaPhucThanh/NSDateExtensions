@@ -19,7 +19,7 @@ class Tests: XCTestCase {
         XCTAssert(date.equalToDateIgnoringTime(dateCopy))
         XCTAssert(!date.equalToDateIgnoringTime(date.addDays(1)))
         XCTAssert(!date.equalToDateIgnoringTime(date.subtractDays(1)))
-        
+            
     }
 }
     
