@@ -16,6 +16,7 @@ class Tests: XCTestCase {
     
     func testExample() {
         // This is an example of a functional test case.
+        let cal = NSDate.currentCalendar
         XCTAssert(true, "Pass")
     }
     

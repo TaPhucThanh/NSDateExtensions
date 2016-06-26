@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension NSDate {
+public extension NSDate {
     private var componentFlags: NSCalendarUnit {
         get {
             return [.Year, .Month, .Day, .WeekOfMonth, .WeekOfYear, .Hour, .Minute, .Second, .Weekday, .WeekdayOrdinal]
