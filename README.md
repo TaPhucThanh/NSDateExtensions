@@ -11,6 +11,8 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
+As of right now I only have the pod set to target iOS 9.0 or greater. I plan to add other iOS versions, and possibly macOS, as I go.
+
 ## Installation
 
 NSDateExtensions is available through [CocoaPods](http://cocoapods.org). To install
