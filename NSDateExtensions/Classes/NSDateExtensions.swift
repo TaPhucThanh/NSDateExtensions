@@ -39,8 +39,12 @@ public extension NSDate {
         return NSDate().subtractDays(days)
     }
     
-    class func today() -> NSDate {
+    class func now() -> NSDate {
         return NSDate()
+    }
+    
+    class func today() -> NSDate {
+        return NSDate.now()
     }
     
     class func tomorrow() -> NSDate {

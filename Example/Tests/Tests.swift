@@ -12,14 +12,19 @@ class Tests: XCTestCase {
         XCTAssertEqual(NSDate.currentCalendar, NSCalendar.autoupdatingCurrentCalendar())
     }
     
-    func testDateNow() {
+    func testDateEquality() {
         let date = NSDate()
         let dateCopy = date
         XCTAssert(date.isEqualToDate(dateCopy))
         XCTAssert(date.equalToDateIgnoringTime(dateCopy))
-        XCTAssert(!date.equalToDateIgnoringTime(date.addDays(1)))
-        XCTAssert(!date.equalToDateIgnoringTime(date.subtractDays(1)))
-            
+    }
+    
+    func testDateToday() {
+        //As long as we've tested this first, we can use it to verify
+        XCTAssert(NSDate().equalToDateIgnoringTime(NSDate.now()))
+        XCTAssert(NSDate().equalToDateIgnoringTime(NSDate.today()))
+        XCTAssert(NSDate.now().today())
+        XCTAssert(NSDate.today().today())
     }
 }
     
