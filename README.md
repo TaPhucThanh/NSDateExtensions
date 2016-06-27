@@ -28,7 +28,7 @@ Matt Johnson, matt@intuitivedesignlabs.com
 NSDateExtensions is a port of @erica's [NSDate-Extensions](https://github.com/erica/NSDate-Extensions) for Objective-C placed into a cocoapod for easy integration.
 
 ## Bug Reporting
-If you find a bug please file an issue detailing the bug, what you did to test that the bug is a bug, and (if possible) a fix/patch. Depending on the complexity of the bug I will try to integrate the fix as soon as I can given the complexity. 
+If you find a bug please file an issue detailing the bug, what you did to test that the bug is a bug, and (if possible) a fix/patch. Depending on the complexity of the bug I will try to integrate the fix as soon as I can given the complexity, and (if needed) release an update ASAP.
 
 ## License
 
