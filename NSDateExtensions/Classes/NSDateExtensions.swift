@@ -131,6 +131,24 @@ public extension NSDate {
         return self.stringWithDateStyle(.LongStyle, timeStyle: .NoStyle)
     }
     
+    func relativeString() -> String {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.doesRelativeDateFormatting = true
+        
+        if self.today() {
+            return self.shortTimeString()
+        }
+        else if self.yesterday() {
+            return self.mediumDateString()
+        }
+        else if self.inThePast() && self.daysAgo() < 6 {
+            return dateFormatter.weekdaySymbols[self.weekday-1]
+        }
+        else {
+            return self.shortDateString()
+        }
+    }
+    
     //MARK: - Comparing Dates
     //MARK: Equal Dates
     func equalToDateIgnoringTime(date: NSDate) -> Bool {
@@ -300,8 +318,22 @@ public extension NSDate {
     }
     
     //MARK: Relative Components
+    func componentsWithOffsetToDate(date: NSDate) -> NSDateComponents {
+        return NSDate.currentCalendar.components(componentFlags, fromDate: self, toDate: date, options: .WrapComponents)
+    }
+    
     func componentsWithOffsetFromDate(date: NSDate) -> NSDateComponents {
         return NSDate.currentCalendar.components(componentFlags, fromDate: date, toDate: self, options: .WrapComponents)
+    }
+    
+    func daysFromNow() -> Int {
+        let components = self.componentsWithOffsetFromDate(NSDate())
+        return components.day
+    }
+    
+    func daysAgo() -> Int {
+        let components = self.componentsWithOffsetToDate(NSDate())
+        return components.day
     }
     
     //MARK: - Extremes

@@ -26,5 +26,15 @@ class Tests: XCTestCase {
         XCTAssert(NSDate.now().today())
         XCTAssert(NSDate.today().today())
     }
+    
+    func testRelativeDates() {
+        let oneDayAgo = NSDate().subtractDays(1)
+        let daysAgo = oneDayAgo.daysAgo()
+        XCTAssert(daysAgo == 1)
+        
+        let oneDayFromNow = NSDate().addDays(1)
+        let daysFromNow = oneDayFromNow.daysFromNow()
+        XCTAssert(daysFromNow == 1)
+    }
 }
     
